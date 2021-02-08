@@ -38,9 +38,9 @@ public class AutoCommitTransactionWrapperTest {
             wrapper.create("/test/blah", new byte[] {0x0, 0x0}, null, CreateMode.PERSISTENT);
         }
         verify(transaction, never()).commit();
-        
+
         wrapper.commit();
-        
+
         verify(transaction, times(1)).commit();
 
     }
